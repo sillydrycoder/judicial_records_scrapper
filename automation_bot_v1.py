@@ -22,7 +22,6 @@ logging.basicConfig(
     format='%(asctime)s - %(levelname)s - %(message)s',
     handlers=[
         logging.FileHandler(log_file),
-        logging.StreamHandler()
     ]
 )
 
@@ -36,18 +35,24 @@ class AutomamtionBot:
         with open ("config.json", "r") as file:
             config = json.load(file)
             self.config = config
-        os.system('clear')
-        print(colorama.Fore.CYAN + colorama.Style.BRIGHT)
-        print(config["heading"])
-        self.validate_csv()
         
-                
+    def close_chrome_windows():
+        current_os = platform.system()
+        
+        if current_os == "Windows":
+            os.system("taskkill /F /IM chrome.exe /T")
+        elif current_os == "Darwin":  # macOS
+            os.system("pkill -a -i 'Google Chrome'")
+        elif current_os == "Linux":
+            os.system("pkill chrome")
+        else:
+            print(f"Unsupported OS: {current_os}")            
 
     def validate_csv(self):
         logging.info("Validating csv file.")
         if not os.path.exists("entries.csv"):
             logger.error("'entries.csv' not found.")
-            logger.info("Make sure 'entries.csv' is in the same directory as the script. Check filename if you have misspeled or added a '.csv' extension.")
+            logger.info("Make sure 'entries.csv' is in the same directory as the script. Check filename if you have misspeled and a '.csv' extension.")
             return False
         
         with open("entries.csv", "r") as file:
@@ -71,7 +76,13 @@ class AutomamtionBot:
         logging.info("Validated csv file successfully. All entries are valid.")
         return True
         
-        
+    def start(self):
+        os.system('clear')
+        print(colorama.Fore.CYAN + colorama.Style.BRIGHT)
+        print(self.config["heading"])
+        self.validate_csv()
+        for index in range(len(self.search_queries)):
+            self.get_total_results(index)  
     
     def get_total_results(self, index):
         
@@ -160,5 +171,5 @@ class AutomamtionBot:
 
 if __name__ == "__main__":
     new_bot = AutomamtionBot()
-    new_bot.scrape_url()
+    new_bot.start()
     
