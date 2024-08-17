@@ -127,5 +127,12 @@ class App:
 
 
 if __name__ == '__main__':
+    print("╔═══════════════════════════════════════════════════════════════════════════════╗")
+    print("║ Welcome to the Judicial Records Scrapper (v2.0)                               ║")
+    print("║ If you close this console the Bot window will also be force-closed.           ║")
+    print("║ Credits: tensor35 - https://github.com/tensor35/judicial_records_scrapper.git ║")
+    print("╠═══════════════════════════════════════════════════════════════════════════════╝")
+    print("╚═══> Bot running in GUI mode. Please wait for the GUI window to appear.")
+    
     app = App()
     app.run()
