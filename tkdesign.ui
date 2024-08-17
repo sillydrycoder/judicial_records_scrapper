@@ -1,0 +1,259 @@
+<?xml version='1.0' encoding='utf-8'?>
+<interface version="1.4" author="PygubuDesigner 0.39.3">
+  <project>
+    <settings />
+    <customwidgets />
+  </project>
+  <object class="tk.Tk" id="mainwindow" named="True">
+    <property name="height">200</property>
+    <property name="padx">10</property>
+    <property name="pady">10</property>
+    <property name="title" translatable="yes">Judicial Scrapper v2</property>
+    <property name="width">200</property>
+    <child>
+      <object class="ttk.Label" id="welcome_text" named="True">
+        <property name="font">TkHeadingFont</property>
+        <property name="text" translatable="yes">Welcome to Judicial Scrapper v2.</property>
+        <layout manager="pack">
+          <property name="anchor">w</property>
+          <property name="pady">3</property>
+          <property name="side">top</property>
+        </layout>
+      </object>
+    </child>
+    <child>
+      <object class="ttk.Label" id="search_lable" named="True">
+        <property name="anchor">sw</property>
+        <property name="text" translatable="yes">Enter search text below:</property>
+        <layout manager="pack">
+          <property name="anchor">sw</property>
+          <property name="expand">true</property>
+          <property name="fill">both</property>
+          <property name="pady">5</property>
+          <property name="side">top</property>
+        </layout>
+      </object>
+    </child>
+    <child>
+      <object class="ttk.Entry" id="search_box" named="True">
+        <property name="exportselection">false</property>
+        <property name="font">TkDefaultFont</property>
+        <property name="justify">left</property>
+        <property name="state">normal</property>
+        <property name="takefocus">true</property>
+        <property name="textvariable">string:search_box_val</property>
+        <property name="width">41</property>
+        <layout manager="pack">
+          <property name="anchor">w</property>
+          <property name="expand">true</property>
+          <property name="fill">both</property>
+          <property name="side">top</property>
+        </layout>
+      </object>
+    </child>
+    <child>
+      <object class="ttk.Label" id="checkbox_label" named="True">
+        <property name="text" translatable="yes">Select the Jurisdictio:</property>
+        <layout manager="pack">
+          <property name="anchor">w</property>
+          <property name="fill">both</property>
+          <property name="pady">5</property>
+          <property name="side">top</property>
+        </layout>
+      </object>
+    </child>
+    <child>
+      <object class="ttk.Frame" id="frame3">
+        <property name="height">200</property>
+        <property name="width">406</property>
+        <layout manager="pack">
+          <property name="expand">true</property>
+          <property name="fill">x</property>
+          <property name="side">top</property>
+        </layout>
+        <child>
+          <object class="ttk.Frame" id="frame7">
+            <property name="height">200</property>
+            <property name="width">200</property>
+            <layout manager="pack">
+              <property name="anchor">w</property>
+              <property name="expand">true</property>
+              <property name="side">left</property>
+            </layout>
+            <child>
+              <object class="ttk.Checkbutton" id="civil" named="True">
+                <property name="offvalue">0</property>
+                <property name="onvalue">1</property>
+                <property name="takefocus">false</property>
+                <property name="text" translatable="yes">Civil</property>
+                <property name="variable">int:civil_val</property>
+                <layout manager="pack">
+                  <property name="anchor">w</property>
+                  <property name="side">top</property>
+                </layout>
+              </object>
+            </child>
+            <child>
+              <object class="ttk.Checkbutton" id="penal" named="True">
+                <property name="offvalue">0</property>
+                <property name="onvalue">1</property>
+                <property name="text" translatable="yes">Penal</property>
+                <property name="variable">int:penal_val</property>
+                <layout manager="pack">
+                  <property name="anchor">w</property>
+                  <property name="side">top</property>
+                </layout>
+              </object>
+            </child>
+            <child>
+              <object class="ttk.Checkbutton" id="contencioso" named="True">
+                <property name="offvalue">0</property>
+                <property name="onvalue">1</property>
+                <property name="text" translatable="yes">Contencioso</property>
+                <property name="variable">int:contencioso_val</property>
+                <layout manager="pack">
+                  <property name="side">top</property>
+                </layout>
+              </object>
+            </child>
+          </object>
+        </child>
+        <child>
+          <object class="ttk.Frame" id="frame4">
+            <property name="cursor">arrow</property>
+            <property name="height">200</property>
+            <property name="width">200</property>
+            <layout manager="pack">
+              <property name="anchor">w</property>
+              <property name="expand">true</property>
+              <property name="side">left</property>
+            </layout>
+            <child>
+              <object class="ttk.Checkbutton" id="social" named="True">
+                <property name="offvalue">0</property>
+                <property name="onvalue">1</property>
+                <property name="text" translatable="yes">Social</property>
+                <property name="variable">string:social_val</property>
+                <layout manager="pack">
+                  <property name="anchor">w</property>
+                  <property name="side">top</property>
+                </layout>
+              </object>
+            </child>
+            <child>
+              <object class="ttk.Checkbutton" id="militar" named="True">
+                <property name="offvalue">0</property>
+                <property name="onvalue">1</property>
+                <property name="text" translatable="yes">Militar</property>
+                <property name="variable">int:militar_val</property>
+                <layout manager="pack">
+                  <property name="anchor">w</property>
+                  <property name="side">top</property>
+                </layout>
+              </object>
+            </child>
+            <child>
+              <object class="ttk.Checkbutton" id="special" named="True">
+                <property name="offvalue">0</property>
+                <property name="onvalue">1</property>
+                <property name="text" translatable="yes">Special</property>
+                <property name="variable">string:special_val</property>
+                <layout manager="pack">
+                  <property name="anchor">w</property>
+                  <property name="side">top</property>
+                </layout>
+              </object>
+            </child>
+          </object>
+        </child>
+      </object>
+    </child>
+    <child>
+      <object class="ttk.Label" id="log_text" named="True">
+        <property name="background">black</property>
+        <property name="borderwidth">1</property>
+        <property name="font">TkFixedFont</property>
+        <property name="foreground">white</property>
+        <property name="padding">10</property>
+        <property name="state">normal</property>
+        <property name="text" translatable="yes">No information yet!</property>
+        <property name="textvariable">string:curent_log</property>
+        <property name="wraplength">318</property>
+        <layout manager="pack">
+          <property name="fill">both</property>
+          <property name="ipady">5</property>
+          <property name="pady">5</property>
+          <property name="side">top</property>
+        </layout>
+      </object>
+    </child>
+    <child>
+      <object class="ttk.Frame" id="frame1">
+        <property name="height">200</property>
+        <property name="width">200</property>
+        <layout manager="pack">
+          <property name="anchor">w</property>
+          <property name="fill">both</property>
+          <property name="side">top</property>
+        </layout>
+        <child>
+          <object class="ttk.Label" id="label3">
+            <property name="text" translatable="yes">Credits: tensor35 - For any issue/information visit repo.</property>
+            <layout manager="pack">
+              <property name="pady">5</property>
+              <property name="side">top</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="ttk.Button" id="search_button" named="True">
+            <property name="command" type="command" cbtype="simple">start_bot</property>
+            <property name="text" translatable="yes">Search Results</property>
+            <layout manager="pack">
+              <property name="expand">true</property>
+              <property name="fill">x</property>
+              <property name="pady">5</property>
+              <property name="side">top</property>
+            </layout>
+          </object>
+        </child>
+      </object>
+    </child>
+    <child>
+      <object class="ttk.Button" id="github_button" named="True">
+        <property name="command" type="command" cbtype="simple">open_github</property>
+        <property name="text" translatable="yes">Visit Official GitHub Repo</property>
+        <layout manager="pack">
+          <property name="anchor">w</property>
+          <property name="fill">both</property>
+          <property name="side">top</property>
+        </layout>
+      </object>
+    </child>
+    <child>
+      <object class="ttk.Label" id="starting_label" named="True">
+        <property name="anchor">n</property>
+        <property name="background">yellow</property>
+        <property name="font">TkCaptionFont</property>
+        <property name="padding">10</property>
+        <property name="text" translatable="yes">Please Wait! Bot is being initialized.</property>
+        <property name="textvariable">string:starting_label_text</property>
+        <layout manager="pack">
+          <property name="fill">both</property>
+          <property name="pady">10</property>
+          <property name="side">top</property>
+        </layout>
+      </object>
+    </child>
+    <child>
+      <object class="ttk.Progressbar" id="progressbar" named="True">
+        <property name="maximum">100</property>
+        <property name="orient">horizontal</property>
+        <layout manager="pack">
+          <property name="fill">both</property>
+          <property name="side">top</property>
+        </layout>
+      </object>
+    </child>
+  </object>
+</interface>

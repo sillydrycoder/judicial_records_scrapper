@@ -1,3 +1,3 @@
 selenium
-colorama
 beautifulsoup4
+requests
