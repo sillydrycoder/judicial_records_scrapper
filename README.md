@@ -1,44 +1,35 @@
-# Automation Bot for Judicial Records Scraping
+# Automation Bot for Judicial Records Scraping (v2)
 
 ## Table of Contents
 - [Overview](#overview)
 - [Features](#features)
 - [Prerequisites](#prerequisites)
 - [Installation](#installation)
-- [Configuration](#configuration)
 - [Usage](#usage)
 - [Logging](#logging)
 - [Error Handling](#error-handling)
+- [Changelog](#changelog)
 - [Contributing](#contributing)
 - [License](#license)
 
 ## Overview
-The **Automation Bot** is a Python-based tool designed to scrape judicial records from the Poder Judicial website. The bot automates the process of searching for specific records based on user-defined criteria, retrieving search results, and handling various tasks, such as validating input data, managing cookies, and logging operations. This bot is intended for use by legal professionals, researchers, and developers who need to automate data retrieval processes from judicial databases.
+The **Automation Bot for Judicial Records Scraping** is a Python-based application that automates the process of searching and retrieving judicial records from the Poder Judicial website. Version 2 of the bot introduces several improvements and simplifications, including updates to configuration management and error handling.
 
 ## Features
-- **Automated Data Retrieval**: Searches judicial records based on user-defined search strings and jurisdictions.
-- **CSV Validation**: Ensures the integrity of input data before processing.
-- **Cookie Management**: Automatically obtains and manages session cookies for authenticated requests.
-- **Error Handling**: Comprehensive logging and error handling mechanisms ensure robust operation.
-- **Headless Browser Support**: Uses Chrome in headless mode for efficient and unobtrusive operation.
-- **Cross-Platform Compatibility**: Supports Windows, macOS, and Linux.
+- **Automated Record Search**: Searches for judicial records based on user-defined search terms and selected jurisdictions.
+- **Headless Browser Operation**: Uses Chrome in headless mode for efficient operation.
+- **Logging**: Detailed logging of bot activities and errors.
+- **Flexible GUI**: Built using Tkinter with Pygubu Designer for a user-friendly interface.
+- **CSV Output**: Saves search results to a CSV file.
 
 ## Prerequisites
-Before using this bot, ensure you have the following installed on your system:
-- Python 3.7+
+Ensure you have the following installed:
+- Python 3.7 or later
 - Google Chrome (latest version)
-- ChromeDriver (if `use_chromedriver` is set to `True` in `config.json`)
-- pip (Python package manager)
 
-The bot also requires the following Python packages:
-- `selenium`
-- `requests`
-- `beautifulsoup4`
-- `colorama`
-
-You can install these packages using the following command:
+Install the required Python packages using:
 ```bash
-pip install -r requirements.txt
+pip install selenium requests beautifulsoup4 pygubu
 ```
 
 ## Installation
@@ -47,72 +38,52 @@ pip install -r requirements.txt
    git clone https://github.com/tensor35/judicial_records_scrapper.git
    cd judicial_records_scrapper
    ```
-2. Install the required Python packages:
+2. Install the necessary Python packages:
    ```bash
    pip install -r requirements.txt
    ```
-3. Place your `entries.csv` file in the root directory of the project. This file should contain the search queries and corresponding jurisdictions.
-
-## Configuration
-The bot requires a configuration file named `config.json`, which should be placed in the root directory. The configuration file includes settings such as available jurisdictions and the option to use a custom ChromeDriver. Below is an example configuration:
-
-```json
-{
-    "use_chromedriver": true,
-    "available_jurisdiction": ["Civil", "Criminal", "Administrative"],
-    "heading": "Judicial Records Automation Bot"
-}
-```
-
-- `use_chromedriver`: Set to `true` to use a custom ChromeDriver; otherwise, set to `false`.
-- `available_jurisdiction`: List of valid jurisdictions that can be used in the `entries.csv` file.
-- `heading`: Custom heading displayed in the terminal during bot execution.
 
 ## Usage
-To start the bot, run the following command in the terminal:
-
+To start the bot, run the following command:
 ```bash
-python automamtion_bot_v1.py
+python main.py
 ```
 
-The bot will guide you through the process, including validating the input CSV file, obtaining session cookies, and starting the scraping process. Ensure your terminal window is maximized for the best user experience.
+### User Interface
+The application features a Tkinter-based GUI that allows users to:
+- Enter a search term.
+- Select relevant jurisdictions via checkboxes.
+- Start the search process.
+- View progress and results in real-time.
+- Open the GitHub repository for more information.
 
-### CSV File Structure
-The `entries.csv` file should contain the following columns:
-- **Search String**: The string to search for in the judicial records.
-- **Jurisdiction 1**: The first jurisdiction to search within.
-- **Jurisdiction 2**: The second jurisdiction to search within.
-- **Jurisdiction 3**: The third jurisdiction to search within.
-- **Total Results (Optional)**: This column will be populated by the bot during execution.
-
-### Example `entries.csv`
-```csv
-Search Term 1,Civil,Criminal,Administrative,
-Search Term 2,Criminal,Civil,Administrative,
-```
+### CSV Output
+Search results are saved in a `results.csv` file located in the root directory of the project. The file includes columns for:
+- **Search String**
+- **Jurisdictions**
+- **Results**
 
 ## Logging
-The bot uses Python's built-in logging module to capture detailed logs of its operations. Logs are written to `script.log` in the root directory. The log file includes timestamps, log levels, and detailed messages about each step of the process.
-
-### Log Levels
-- **INFO**: General information about the bot's operation.
-- **ERROR**: Captures any errors encountered during execution.
-- **DEBUG**: (If enabled) Detailed debugging information for troubleshooting.
+The bot uses Python's logging module to create detailed logs of its operations. Logs are stored in `script.log` in the root directory.
 
 ## Error Handling
-The bot includes comprehensive error handling mechanisms to ensure reliable operation. If any errors occur, the bot will log them in `script.log` and provide guidance in the terminal. In case of critical issues, the bot will gracefully exit, allowing the user to review logs and correct any problems.
+The bot has built-in error handling to manage various issues:
+- **Initialization Errors**: Issues with starting the bot or obtaining cookies are logged, and users are notified through the GUI.
+- **Search Errors**: Problems during search operations are logged and displayed.
 
-### Common Errors
-- **CSV Validation Errors**: If the input CSV file is invalid, the bot will log specific issues, such as missing files, incorrect column counts, or invalid jurisdictions.
-- **Cookie Retrieval Errors**: If the bot fails to obtain a session cookie, it will attempt to refresh the page or restart the browser session.
-- **ChromeDriver Errors**: If the ChromeDriver is missing or outdated, the bot will provide instructions for downloading the correct version.
+## Changelog
+### v2.0
+- **Removed Configuration File**: The bot no longer uses a `config.json` file.
+- **CSV Output**: Results are now appended to a `results.csv` file.
+- **Chromedriver Removal**: The bot no longer relies on a separate Chromedriver executable; it uses the default Chrome installation.
+- **Simplified Dependencies**: Removed unnecessary dependencies and streamlined the setup process.
 
 ## Contributing
-Contributions are welcome! Please submit a pull request or open an issue on GitHub if you have any suggestions, bug reports, or improvements.
+Contributions are welcome! Please submit issues or pull requests via GitHub for any bug fixes, improvements, or feature requests.
 
 ## License
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
 
 ---
 
-**Disclaimer**: This bot is provided for educational and research purposes only. The authors are not responsible for any misuse or legal implications arising from the use of this software.
+**Disclaimer**: This bot is intended for educational and research purposes only. The authors are not responsible for any misuse or legal implications resulting from the use of this software.

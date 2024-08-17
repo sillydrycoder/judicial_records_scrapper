@@ -1,6 +1,4 @@
 import pathlib
-import tkinter as tk
-import tkinter.ttk as ttk
 import pygubu
 import threading
 from bot import AutomamtionBot
