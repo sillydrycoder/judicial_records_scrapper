@@ -13,7 +13,7 @@
     <child>
       <object class="ttk.Label" id="welcome_text" named="True">
         <property name="font">TkHeadingFont</property>
-        <property name="text" translatable="yes">Welcome to Judicial Scrapper v2.</property>
+        <property name="text" translatable="yes">Welcome to Judicial Scrapper v2.1.</property>
         <layout manager="pack">
           <property name="anchor">w</property>
           <property name="pady">3</property>
