@@ -1,13 +1,11 @@
 import logging
 import os
 from selenium import webdriver
-from selenium.webdriver.common.by import By
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.chrome.service import Service
 import os
 import requests
 from bs4 import BeautifulSoup
+import re
 
 # Configure logging
 log_file = 'script.log'
@@ -23,10 +21,10 @@ logger = logging.getLogger(__name__)
 
 
 class AutomamtionBot:
-    def __init__(self, gui_logger, progressbar):
+    def __init__(self, gui_logger, update_progress):
         self.page_url = "https://www.poderjudicial.es/search/indexAN.jsp"
         self.gui_logger = gui_logger
-        self.progressbar = progressbar
+        self.update_progress = update_progress
         
     def obtain_cookie(self):
         
@@ -36,19 +34,19 @@ class AutomamtionBot:
         else:  
             service = Service()
             
-        self.progressbar.config(value=10)
+        self.update_progress(10)
             
         # Set up Chrome options for downloading
         chrome_options = webdriver.ChromeOptions()
         chrome_options.add_argument("--headless=new")
         
         self.gui_logger.set("Initializing Bot...")
-        self.progressbar.config(value=20)
+        self.update_progress(20)
 
         try:
             self.driver= webdriver.Chrome(service=service, options=chrome_options)
             logger.info("Initialized chromedriver successfully.")
-            self.progressbar.config(value=50)
+            self.update_progress(50)
         except Exception as e:
             logger.error(f"Error initializing chromedriver: {e}")
             self.gui_logger.set("Error with chromedriver. You should check 'script.log'.")
@@ -58,7 +56,7 @@ class AutomamtionBot:
             # Navigating to URL
             self.driver.get(self.page_url)
             logger.info(f"Navigated to Search page.")
-            self.progressbar.config(value=80)
+            self.update_progress(80)
 
         except Exception as e:
             logger.error("Failed navigating to Search Page")
@@ -70,7 +68,7 @@ class AutomamtionBot:
         cookie = self.driver.get_cookie("JSESSIONID")
         if cookie:
             logger.info(f"Cookie JSESSIONID: {cookie}")
-            self.progressbar.config(value=100)
+            self.update_progress(100)
             cookie = cookie["value"]
         else:
             logger.error("Failed to get cookie JSESSIONID.")
@@ -95,9 +93,11 @@ class AutomamtionBot:
             'databasematch': 'AN',
             'start': 1,
             'TEXT': search_string,
-            'JURISDICCION': judiction_string,
         }
 
+        if selected_jurisdictions:
+            params['JURISDICCION'] = judiction_string
+            
         # Define the headers
         headers = {
             'Accept': 'text/html, */*; q=0.01',
@@ -128,12 +128,11 @@ class AutomamtionBot:
             soup = BeautifulSoup(response.text, 'html.parser')
             
             # Find the number of results
-            numhits_div = soup.find('div', class_='col-md-5 numhits hidden-xs')
+            numhits_div = soup.find('div', class_=re.compile(r'col-md-(5|7)\snumhits\s'))
             if numhits_div:
                 # Extract the number of results
                 results_text = numhits_div.get_text(strip=True)
                 # Extract only the number using regular expressions
-                import re
                 match = re.search(r'\d+', results_text)
                 if match:
                     num_results = match.group()

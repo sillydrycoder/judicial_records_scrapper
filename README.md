@@ -1,4 +1,4 @@
-# Automation Bot for Judicial Records Scraping (v2)
+# Automation Bot for Judicial Records Scraping (v2.1)
 
 ## Table of Contents
 - [Overview](#overview)
@@ -72,6 +72,13 @@ The bot has built-in error handling to manage various issues:
 - **Search Errors**: Problems during search operations are logged and displayed.
 
 ## Changelog
+### v2.1
+- **Fixed No Results for Complex Searches**: Bot now responds to complex searches previously it displays 0. That was due to some recent changes in page structure. Which causes the bot to show 0 results even they are present there.
+
+- **Search without Judictions**: Previous versions required at least one judiction selected to make a search. but this version eleminates this condition and bot can now search without any judiction selected.
+
+- **Added Progress Indicator with Progressbar**:
+A utility lable is added to display the realtime progress along wit progressbar when initializing bot.
 ### v2.0
 - **Removed Configuration File**: The bot no longer uses a `config.json` file.
 - **CSV Output**: Results are now appended to a `results.csv` file.

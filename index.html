@@ -1,0 +1,400 @@
+<!DOCTYPE aside PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<aside xmlns:autn="http://schemas.autonomy.com/aci/">
+<div class="filtersidebar">
+<div class="lnksearchfilters">
+<a href="#" onclick="javascript:toggleFilters(this); return false;"><span>FILTROS</span></a>
+<div id="jurisprudenciaresults_filters" class="searchfilters">
+<ul>
+<li class="checkfilters">
+<div class="checkfiltersButton">
+<button class="btn btn-primary" href="#" onclick="javascript:toggleCheckfilters('jurisprudencia');">Filtrar</button>
+</div>
+</li>
+<li class="navfiltro" data-totalhits="5" data-idtab="jurisprudencia" data-name="JURISDICCION">
+<a href="#" onclick="javascript:toggleFilter(this); return false;" data-idtab="jurisprudencia" data-database="AN">Jurisdicci&oacute;n <i class="pull-right fa fa-caret-down" aria-hidden="true"></i></a><button style="display:none;" onclick="javascript:removeCheckfilters('jurisprudencia', 'JURISDICCION', this); return false;" data-l10n-id="results.searchresults.filter.button.delfilter" type="button" class="btn btn-primary btn-sm pull-right delfilter">borrar filtro</button>
+<div id="navpfiltroJurisd" class="navpfiltro nicescroll" style="display:none;" tabindex="0"></div>
+</li>
+<li class="navfiltro" data-totalhits="5" data-idtab="jurisprudencia" data-name="SUBTIPORESOLUCION">
+<a href="#" onclick="javascript:toggleFilter(this); return false;" data-idtab="jurisprudencia" data-database="AN">Resoluci&oacute;n <i class="pull-right fa fa-caret-down" aria-hidden="true"></i></a><button style="display:none;" onclick="javascript:removeCheckfilters('jurisprudencia', 'SUBTIPORESOLUCION', this); return false;" data-l10n-id="results.searchresults.filter.button.delfilter" type="button" class="btn btn-primary btn-sm pull-right delfilter">borrar filtro</button>
+<div id="navpfiltroResolucion" class="navpfiltro nicescroll" style="display:none;" tabindex="0"></div>
+</li>
+<li class="navfiltro" data-totalhits="5" data-idtab="jurisprudencia" data-name="TIPOORGANOPUB">
+<a href="#" onclick="javascript:toggleFilter(this); return false;" data-idtab="jurisprudencia" data-database="AN">&Oacute;rgano <i class="pull-right fa fa-caret-down" aria-hidden="true"></i></a><button style="display:none;" id="removeOrg" onclick="javascript:removeCheckfilters('jurisprudencia', 'TIPOORGANOPUB', this); return false;" data-l10n-id="results.searchresults.filter.button.delfilter" type="button" class="btn btn-primary btn-sm pull-right delfilter">borrar filtro</button>
+<div id="navpfiltroOrgano" class="navpfiltro nicescroll" style="display:none;" tabindex="0"></div>
+</li>
+<li class="navfiltro" data-totalhits="5" data-idtab="jurisprudencia" data-name="ANYO">
+<a href="#" onclick="javascript:toggleFilter(this); return false;" data-idtab="jurisprudencia" data-database="AN">A&ntilde;o <i class="pull-right fa fa-caret-down" aria-hidden="true"></i></a><button style="display:none;" onclick="javascript:removeCheckfilters('jurisprudencia', 'ANYO', this); return false;" data-l10n-id="results.searchresults.filter.button.delfilter" type="button" class="btn btn-primary btn-sm pull-right delfilter">borrar filtro</button>
+<div id="navpfiltroAnyo" class="navpfiltro nicescroll" style="display:none;" tabindex="0"></div>
+</li>
+<li class="navfiltro" data-totalhits="5" data-idtab="jurisprudencia" data-name="PONENTE">
+<a href="#" onclick="javascript:toggleFilter(this); return false;" data-idtab="jurisprudencia" data-database="AN">Ponente <i class="pull-right fa fa-caret-down" aria-hidden="true"></i></a><button style="display:none;" onclick="javascript:removeCheckfilters('jurisprudencia', 'PONENTE', this); return false;" data-l10n-id="results.searchresults.filter.button.delfilter" type="button" class="btn btn-primary btn-sm pull-right delfilter">borrar filtro</button>
+<div id="navpfiltroPonente" class="navpfiltro nicescroll" style="display:none;" tabindex="0"></div>
+</li>
+<li class="checkfilters">
+<div class="checkfiltersButton">
+<button class="btn btn-primary" href="#" onclick="javascript:toggleCheckfilters('jurisprudencia');">Filtrar</button>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="text-center botonera">
+<a href="#" class="btn btn-default newalert"><img src="/search/img/envbell.png" alt=""> Crear alerta</a>
+</div>
+</div>
+</aside><div class="resultswrapper">
+<div class="toppagination row">
+<form id="frmFilterjurisprudencia" name="frmFilterjurisprudencia" action="#" class="searchform" onsubmit="goToPage('jurisprudencia',$(this).find('.slectnavgoto input').val());">
+<input type="hidden" name="total" id="frmFilterjurisprudencia_total" value="5"><input type="hidden" name="records" id="frmFilterjurisprudencia_records" value="10"><input type="hidden" name="page" id="frmFilterjurisprudencia_page" value="1">
+<div class="col-md-7 numhits hidden-xs">
+<b>5 resultados</b>
+</div>
+<div class="col-xs-12 col-md-5 sort">
+<div class="pull-right col-xs-12 nopad">
+<div id="jurisprudenciaresults_toppagination" class="hidden pull-right searchpagination top nopad"></div>
+<div class="pull-right sortfield hidden-xs">
+<label for="frmFilterjurisprudencia_cbosort" class="oculta">Ordenar:</label><select id="frmFilterjurisprudencia_cbosort" name="cbosort" onchange="javascript:ordenar('jurisprudencia', true);" class="selectpicker form-control pull-left"><option value="Relevance" data-l10n-id="results.pagination.sort.coincidencia">
+                                                                                                Coincidencia
+                                                                                        </option><option value="IN_FECHARESOLUCION:increasing" data-l10n-id="results.pagination.sort.fecha.resol.asc">
+                                                                                                Fecha Resol. [0..9]
+                                                                                        </option><option value="IN_FECHARESOLUCION:decreasing" data-l10n-id="results.pagination.sort.fecha.resol.desc" selected="true">
+                                                                                                Fecha Resol. [9..0]
+                                                                                        </option><option value="IN_FECHAENTRADA:numberdecreasing">
+                                                                                                Lo m&aacute;s nuevo
+                                                                                        </option><option value="IP_TIPOORGANO:alphabetical" data-l10n-id="results.pagination.sort.organo.asc">
+                                                                                                Organo [a..z]
+                                                                                        </option><option value="IP_TIPOORGANO:reversealphabetical" data-l10n-id="results.pagination.sort.organo.desc">
+                                                                                                Organo [z..a]
+                                                                                        </option></select>
+</div>
+<div class="pull-right hidden-xs">
+<label for="frmFilterjurisprudencia_cboresults" class="hidden-xs cboresults">Ver</label>
+<div class="recordsperpagefield ">
+<select id="frmFilterjurisprudencia_cboresults" onchange="javascript:ordenar('jurisprudencia', true);" class="selectpicker form-control"><option value="10" selected="true">10</option><option value="20">20</option><option value="30">30</option><option value="50">50</option></select>
+</div>
+</div>
+</div>
+</div>
+</form>
+</div>
+<div id="jurisprudenciaresults_searchresults" class="row searchresults">
+<div class="row searchresult doc" id="jurisprudenciaresults_content-10365523" data-ref="10365523" data-db="AN" data-fechares="20230116" data-alertdoc="">
+<div class="col-xs-12 col-sm-12 content">
+<div class="title">
+<a href="#" data-link="https://www.poderjudicial.es/search/AN/openDocument/4c94078cc3d5b8d1a0a8778d75e36f0d/20230308" onclick="markOpenedDoc($(this));openDocumentNewWindow(this);return false;" class="tooltips new-button hidden-xs" title="Abrir el documento en nueva ventana" data-placement="top" aria-label="Icono Abrir el documento en nueva ventana" data-databasematch="AN" data-reference="10365523" data-statsqueryid="240439559" data-links="&amp;quot;prision provisional&amp;quot; Y (&amp;quot;estafa agravada&amp;quot; O &amp;quot;estafa agravado&amp;quot;) Y (criptomoneda O bitcoin O inversion) Y reincidencia Y agravante Y mujer" data-optimize="20230308" data-start="1"><i class="fa fa-external-link" aria-hidden="true"></i></a><span class="separator hidden-xs">&nbsp;</span><a href="https://www.poderjudicial.es/search/AN/openDocument/4c94078cc3d5b8d1a0a8778d75e36f0d/20230308" id="ref-10365523" onclick="markOpenedDoc($(this));openDocumentFromHref(this);return false;" data-databasematch="AN" data-reference="10365523" data-statsqueryid="240439559" data-links="&amp;quot;prision provisional&amp;quot; Y (&amp;quot;estafa agravada&amp;quot; O &amp;quot;estafa agravado&amp;quot;) Y (criptomoneda O bitcoin O inversion) Y reincidencia Y agravante Y mujer" data-optimize="20230308" data-roj="SAP M 1651/2023" data-fechares="20230116" data-alertdoc="" data-start="1" data-langiso="es">SAP Madrid, a 16 de enero de 2023 - ROJ: SAP M 1651/2023</a>
+</div>
+<div class="metadatos">
+<ul>
+<li>
+<b>ECLI:ES:APM:2023:1651</b>
+</li>
+<li>N&ordm; de Resoluci&oacute;n: <b>15/2023</b>
+</li>
+<li>Municipio: <b>Madrid</b>
+</li>
+<li>Ponente: <b>MARIA BEGO&Ntilde;A CUADRADO GALACHE</b>
+</li>
+<li>N&ordm; Recurso: <b>1120/2019</b>
+</li>
+</ul>
+</div>
+<div class="summary" id="jur-summary-1">
+                                   Resumen Autom&aacute;tico: <b>se excluirán los delitos de <font color=red>estafa agravada</font> contemplados aisladamente, y se atenderá al resto. El delito continuado no desplaza al tipo cualificado de la estafa cuando concurre en alguno de los hechos aisladamente considerado (tipo agravado de la especial gravedad por la cuantía de las conductas contempladas, en nuestro caso desde la perspectiva de muchas víctimas, STS 385/2015, de 25 de junio). Siendo así como declara el TS en SSTS. 196/2014 de 19.3, 370/2010 de 29.4, 239/2010 de 24.3, la compatibilidad entre el delito continuado y la figura agravada del art. 250.1.6, la jurisprudencia de la Sala (SS. 1236/2003 de 27.6, 605/2005 de 11.5, 900/2006 de 27.9, 918/2007 de 20.11, 8/2008 de 24.1), tiene declarado que el delito continuado no excluye la <font color=red>agravante</font> de los hechos que</b>
+</div>
+</div>
+<div class="">
+<div class="info pull-right">
+<ul></ul>
+</div>
+</div>
+<div class="col-xs-12 actions">
+<div class="pull-left docactions">
+<ul>
+<li id="jur-leglink-1" class="hidden-xs hidden legislacion" data-toggle="popover" data-a="jur-legdiv-1" data-placement="bottom" data-pos="1">
+<a href="#" onclick="return false;" class="tooltips" title="Legislaci&oacute;n relacionada" data-placement="top">
+                                                                Legislaci&oacute;n <i class="fa fa-angle-down" aria-hidden="true"></i></a>
+</li>
+</ul>
+<div id="jur-legdiv-1" class="showLegRel hidden popover-content"></div>
+</div>
+<div class="pull-right docactions">
+<ul>
+<li class="social tooltips" title="compartir en Facebook" data-placement="bottom">
+<a href="#" class="fb-button" aria-label="Icono compartir en Facebook" data-href="https://www.poderjudicial.es/search/AN/openDocument/4c94078cc3d5b8d1a0a8778d75e36f0d/20230308" data-title="ROJ: SAP M 1651/2023"><i class="fa fa-facebook-square" aria-hidden="true"></i></a>
+</li>
+<li class="social tooltips twitter" title="compartir en Twitter" data-placement="bottom">
+<a href="#" class="twtr-button" aria-label="Icono compartir en Twitter. Pulse para compartir en Twitter" data-href="https://www.poderjudicial.es/search/AN/openDocument/4c94078cc3d5b8d1a0a8778d75e36f0d/20230308" data-title="ROJ: SAP M 1651/2023">
+<svg class="social_twitter" viewBox="0 0 26 26" aria-hidden="true">
+<g>
+<path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path>
+</g>
+</svg>
+</a>
+</li>
+<li class="social tooltips" title="copiar enlace" data-placement="bottom">
+<a href="#" class="cp-button" aria-label="Icono copiar enlace al portapapeles" data-clipboard-text="https://www.poderjudicial.es/search/AN/openDocument/4c94078cc3d5b8d1a0a8778d75e36f0d/20230308"><i class="fa fa-clipboard" aria-hidden="true"></i></a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="row searchresult doc" id="jurisprudenciaresults_content-10095918" data-ref="10095918" data-db="AN" data-fechares="20220504" data-alertdoc="">
+<div class="col-xs-12 col-sm-12 content">
+<div class="title">
+<a href="#" data-link="https://www.poderjudicial.es/search/AN/openDocument/4b5aca6d2b686106a0a8778d75e36f0d/20220913" onclick="markOpenedDoc($(this));openDocumentNewWindow(this);return false;" class="tooltips new-button hidden-xs" title="Abrir el documento en nueva ventana" data-placement="top" aria-label="Icono Abrir el documento en nueva ventana" data-databasematch="AN" data-reference="10095918" data-statsqueryid="240439559" data-links="&amp;quot;prision provisional&amp;quot; Y (&amp;quot;estafa agravada&amp;quot; O &amp;quot;estafa agravado&amp;quot;) Y (criptomoneda O bitcoin O inversion) Y reincidencia Y agravante Y mujer" data-optimize="20220913" data-start="2"><i class="fa fa-external-link" aria-hidden="true"></i></a><span class="separator hidden-xs">&nbsp;</span><a href="https://www.poderjudicial.es/search/AN/openDocument/4b5aca6d2b686106a0a8778d75e36f0d/20220913" id="ref-10095918" onclick="markOpenedDoc($(this));openDocumentFromHref(this);return false;" data-databasematch="AN" data-reference="10095918" data-statsqueryid="240439559" data-links="&amp;quot;prision provisional&amp;quot; Y (&amp;quot;estafa agravada&amp;quot; O &amp;quot;estafa agravado&amp;quot;) Y (criptomoneda O bitcoin O inversion) Y reincidencia Y agravante Y mujer" data-optimize="20220913" data-roj="SAP L 622/2022" data-fechares="20220504" data-alertdoc="" data-start="2" data-langiso="es">SAP Lleida, a 04 de mayo de 2022 - ROJ: SAP L 622/2022</a>
+</div>
+<div class="metadatos">
+<ul>
+<li>
+<b>ECLI:ES:APL:2022:622</b>
+</li>
+<li>N&ordm; de Resoluci&oacute;n: <b>134/2022</b>
+</li>
+<li>Municipio: <b>Lleida</b>
+</li>
+<li>Ponente: <b>VICTOR MANUEL GARCIA NAVASCUES</b>
+</li>
+<li>N&ordm; Recurso: <b>47/2021</b>
+</li>
+</ul>
+</div>
+<div class="summary" id="jur-summary-2">
+                                   Resumen Autom&aacute;tico: <b>calificadas y procedentes las penas solicitadas. Vistos los artículos citados y demás de general y pertinente aplicación, . CONDENAMOS a , como autor criminalmente responsable de un delito continuado contra la intimidad, descubrimiento y revelación de secretos, en concurso medial con un delito continuado de falsedad documento público, oficial o mercantil, un delito de constitución y/o formación de grupo criminal y un delito de <font color=red>estafa agravada</font>, ya definidos, concurriendo la circunstancia <font color=red>agravante</font> de multirreincidencia en relación al delito continuado de falsedad en documento público, la circunstancia <font color=red>agravante</font> de <font color=red>reincidencia</font> en relación con el delito de <font color=red>estafa agravada</font> y las circunstancias atenuantes analógicas de reparación del daño y de confesión, a la pena de SEIS AÑOS DE PRISIÓN, con la inhabilitación especial para el ejercicio</b>
+</div>
+</div>
+<div class="">
+<div class="info pull-right">
+<ul></ul>
+</div>
+</div>
+<div class="col-xs-12 actions">
+<div class="pull-left docactions">
+<ul>
+<li id="jur-leglink-2" class="hidden-xs hidden legislacion" data-toggle="popover" data-a="jur-legdiv-2" data-placement="bottom" data-pos="2">
+<a href="#" onclick="return false;" class="tooltips" title="Legislaci&oacute;n relacionada" data-placement="top">
+                                                                Legislaci&oacute;n <i class="fa fa-angle-down" aria-hidden="true"></i></a>
+</li>
+</ul>
+<div id="jur-legdiv-2" class="showLegRel hidden popover-content"></div>
+</div>
+<div class="pull-right docactions">
+<ul>
+<li class="social tooltips" title="compartir en Facebook" data-placement="bottom">
+<a href="#" class="fb-button" aria-label="Icono compartir en Facebook" data-href="https://www.poderjudicial.es/search/AN/openDocument/4b5aca6d2b686106a0a8778d75e36f0d/20220913" data-title="ROJ: SAP L 622/2022"><i class="fa fa-facebook-square" aria-hidden="true"></i></a>
+</li>
+<li class="social tooltips twitter" title="compartir en Twitter" data-placement="bottom">
+<a href="#" class="twtr-button" aria-label="Icono compartir en Twitter. Pulse para compartir en Twitter" data-href="https://www.poderjudicial.es/search/AN/openDocument/4b5aca6d2b686106a0a8778d75e36f0d/20220913" data-title="ROJ: SAP L 622/2022">
+<svg class="social_twitter" viewBox="0 0 26 26" aria-hidden="true">
+<g>
+<path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path>
+</g>
+</svg>
+</a>
+</li>
+<li class="social tooltips" title="copiar enlace" data-placement="bottom">
+<a href="#" class="cp-button" aria-label="Icono copiar enlace al portapapeles" data-clipboard-text="https://www.poderjudicial.es/search/AN/openDocument/4b5aca6d2b686106a0a8778d75e36f0d/20220913"><i class="fa fa-clipboard" aria-hidden="true"></i></a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="row searchresult doc" id="jurisprudenciaresults_content-10087672" data-ref="10087672" data-db="AN" data-fechares="20220428" data-alertdoc="">
+<div class="col-xs-12 col-sm-12 content">
+<div class="title">
+<a href="#" data-link="https://www.poderjudicial.es/search/AN/openDocument/6247bd0c43020007a0a8778d75e36f0d/20220902" onclick="markOpenedDoc($(this));openDocumentNewWindow(this);return false;" class="tooltips new-button hidden-xs" title="Abrir el documento en nueva ventana" data-placement="top" aria-label="Icono Abrir el documento en nueva ventana" data-databasematch="AN" data-reference="10087672" data-statsqueryid="240439559" data-links="&amp;quot;prision provisional&amp;quot; Y (&amp;quot;estafa agravada&amp;quot; O &amp;quot;estafa agravado&amp;quot;) Y (criptomoneda O bitcoin O inversion) Y reincidencia Y agravante Y mujer" data-optimize="20220902" data-start="3"><i class="fa fa-external-link" aria-hidden="true"></i></a><span class="separator hidden-xs">&nbsp;</span><a href="https://www.poderjudicial.es/search/AN/openDocument/6247bd0c43020007a0a8778d75e36f0d/20220902" id="ref-10087672" onclick="markOpenedDoc($(this));openDocumentFromHref(this);return false;" data-databasematch="AN" data-reference="10087672" data-statsqueryid="240439559" data-links="&amp;quot;prision provisional&amp;quot; Y (&amp;quot;estafa agravada&amp;quot; O &amp;quot;estafa agravado&amp;quot;) Y (criptomoneda O bitcoin O inversion) Y reincidencia Y agravante Y mujer" data-optimize="20220902" data-roj="SAP B 7436/2022" data-fechares="20220428" data-alertdoc="" data-start="3" data-langiso="es">SAP Barcelona, a 28 de abril de 2022 - ROJ: SAP B 7436/2022</a>
+</div>
+<div class="metadatos">
+<ul>
+<li>
+<b>ECLI:ES:APB:2022:7436</b>
+</li>
+<li>N&ordm; de Resoluci&oacute;n: <b>157/2022</b>
+</li>
+<li>Municipio: <b>Barcelona</b>
+</li>
+<li>Ponente: <b>ALBERTO VARONA JIMENEZ</b>
+</li>
+<li>N&ordm; Recurso: <b>118/2018</b>
+</li>
+</ul>
+</div>
+<div class="summary" id="jur-summary-3">
+                                   Resumen Autom&aacute;tico: <b>ha decidido: 1. CONDENAR a la acusada D.ª como autora penalmente responsable de un delito continuado de <font color=red>estafa agravada</font> por especial gravedad y abuso de relaciones personales o aprovechado credibilidad profesional, con la concurrencia de la circunstancia atenuante muy cualificada de dilaciones indebidas, a la pena de 3 años de prisión, con la accesoria de inhabilitación especial para el ejercicio del derecho de sufragio pasivo y el ejercicio de la profesión de abogado durante el tiempo de la condena, y pena de multa de 8 meses con una cuota diaria de 6 euros, con aplicación de responsabilidad personal subsidiaria en caso de impago de un día de privación de libertad por cada dos cuotas diarias no satisfechas, más el pago de una tercera parte de las costas procesales, incluidas las de la acusación particular. 2. CONDENAR a la acusada D.ª como</b>
+</div>
+</div>
+<div class="">
+<div class="info pull-right">
+<ul></ul>
+</div>
+</div>
+<div class="col-xs-12 actions">
+<div class="pull-left docactions">
+<ul>
+<li id="jur-leglink-3" class="hidden-xs hidden legislacion" data-toggle="popover" data-a="jur-legdiv-3" data-placement="bottom" data-pos="3">
+<a href="#" onclick="return false;" class="tooltips" title="Legislaci&oacute;n relacionada" data-placement="top">
+                                                                Legislaci&oacute;n <i class="fa fa-angle-down" aria-hidden="true"></i></a>
+</li>
+</ul>
+<div id="jur-legdiv-3" class="showLegRel hidden popover-content"></div>
+</div>
+<div class="pull-right docactions">
+<ul>
+<li class="social tooltips" title="compartir en Facebook" data-placement="bottom">
+<a href="#" class="fb-button" aria-label="Icono compartir en Facebook" data-href="https://www.poderjudicial.es/search/AN/openDocument/6247bd0c43020007a0a8778d75e36f0d/20220902" data-title="ROJ: SAP B 7436/2022"><i class="fa fa-facebook-square" aria-hidden="true"></i></a>
+</li>
+<li class="social tooltips twitter" title="compartir en Twitter" data-placement="bottom">
+<a href="#" class="twtr-button" aria-label="Icono compartir en Twitter. Pulse para compartir en Twitter" data-href="https://www.poderjudicial.es/search/AN/openDocument/6247bd0c43020007a0a8778d75e36f0d/20220902" data-title="ROJ: SAP B 7436/2022">
+<svg class="social_twitter" viewBox="0 0 26 26" aria-hidden="true">
+<g>
+<path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path>
+</g>
+</svg>
+</a>
+</li>
+<li class="social tooltips" title="copiar enlace" data-placement="bottom">
+<a href="#" class="cp-button" aria-label="Icono copiar enlace al portapapeles" data-clipboard-text="https://www.poderjudicial.es/search/AN/openDocument/6247bd0c43020007a0a8778d75e36f0d/20220902"><i class="fa fa-clipboard" aria-hidden="true"></i></a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="row searchresult doc" id="jurisprudenciaresults_content-7442284" data-ref="7442284" data-db="TS" data-fechares="20150630" data-alertdoc="">
+<div class="col-xs-12 col-sm-11 content">
+<div class="title">
+<a href="#" data-link="https://www.poderjudicial.es/search/AN/openDocument/4702b41596e1462b/20150724" onclick="markOpenedDoc($(this));openDocumentNewWindow(this);return false;" class="tooltips new-button hidden-xs" title="Abrir el documento en nueva ventana" data-placement="top" aria-label="Icono Abrir el documento en nueva ventana" data-databasematch="TS" data-reference="7442284" data-statsqueryid="240439559" data-links="&amp;quot;prision provisional&amp;quot; Y (&amp;quot;estafa agravada&amp;quot; O &amp;quot;estafa agravado&amp;quot;) Y (criptomoneda O bitcoin O inversion) Y reincidencia Y agravante Y mujer" data-optimize="20150724" data-start="4"><i class="fa fa-external-link" aria-hidden="true"></i></a><span class="separator hidden-xs">&nbsp;</span><a href="https://www.poderjudicial.es/search/AN/openDocument/4702b41596e1462b/20150724" id="ref-7442284" onclick="markOpenedDoc($(this));openDocumentFromHref(this);return false;" data-databasematch="TS" data-reference="7442284" data-statsqueryid="240439559" data-links="&amp;quot;prision provisional&amp;quot; Y (&amp;quot;estafa agravada&amp;quot; O &amp;quot;estafa agravado&amp;quot;) Y (criptomoneda O bitcoin O inversion) Y reincidencia Y agravante Y mujer" data-optimize="20150724" data-roj="STS 3177/2015" data-fechares="20150630" data-alertdoc="" data-start="4" data-langiso="es">STS, a 30 de junio de 2015 - ROJ: STS 3177/2015</a>
+</div>
+<div class="metadatos">
+<ul>
+<li>
+<b>ECLI:ES:TS:2015:3177</b>
+</li>
+<li>
+<b>Sala de lo Penal</b>
+</li>
+<li>N&ordm; de Resoluci&oacute;n: <b>413/2015</b>
+</li>
+<li>Municipio: <b>Madrid</b>
+</li>
+<li>Ponente: <b>JUAN RAMON BERDUGO GOMEZ DE LA TORRE</b>
+</li>
+<li>N&ordm; Recurso: <b>10829/2014</b>
+</li>
+</ul>
+</div>
+<div class="summary" id="jur-summary-4">
+                                                                        RESUMEN: <b>Delitos de <font color=red>estafa agravada</font> en concurso medial con delito de falsedad documental. Delito de blanqueo de capitales. Delito de asociación ilícita. Intervenciones telefónicas. Presunción. Asociación ilícita. Motivación pena. Responsabilidad civil. Costas.</b>
+</div>
+<div id="resultLineaJur-7442284" class="resultlineajur" style="display: none;">
+<div class="lineajurheader">
+<h4>Resoluciones del Caso</h4>
+</div>
+<div class="lineajurcontent cuerpo"></div>
+</div>
+</div>
+<div class="col-sm-1">
+<div class="info pull-right">
+<ul></ul>
+</div>
+</div>
+<div class="col-xs-12 actions">
+<div class="pull-left docactions">
+<ul>
+<li id="jur-leglink-4" class="hidden-xs hidden legislacion" data-toggle="popover" data-a="jur-legdiv-4" data-placement="bottom" data-pos="4">
+<a href="#" onclick="return false;" class="tooltips" title="Legislaci&oacute;n relacionada" data-placement="top">
+                                                                Legislaci&oacute;n <i class="fa fa-angle-down" aria-hidden="true"></i></a>
+</li>
+</ul>
+<div id="jur-legdiv-4" class="showLegRel hidden popover-content"></div>
+</div>
+<div class="pull-right docactions">
+<ul>
+<li class="tooltips lineaj" title="Ver resoluciones del Caso" data-placement="bottom">
+<a href="#" onclick="showLineaJur('7442284','20150724'); return false;"><img alt="Ver resoluciones del Caso" src="/search/img/lineaj.png"></a>
+</li>
+<li class="social tooltips" title="compartir en Facebook" data-placement="bottom">
+<a href="#" class="fb-button" aria-label="Icono compartir en Facebook" data-href="https://www.poderjudicial.es/search/AN/openDocument/4702b41596e1462b/20150724" data-title="ROJ: STS 3177/2015"><i class="fa fa-facebook-square" aria-hidden="true"></i></a>
+</li>
+<li class="social tooltips twitter" title="compartir en Twitter" data-placement="bottom">
+<a href="#" class="twtr-button" aria-label="Icono compartir en Twitter. Pulse para compartir en Twitter" data-href="https://www.poderjudicial.es/search/AN/openDocument/4702b41596e1462b/20150724" data-title="ROJ: STS 3177/2015">
+<svg class="social_twitter" viewBox="0 0 26 26" aria-hidden="true">
+<g>
+<path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path>
+</g>
+</svg>
+</a>
+</li>
+<li class="social tooltips" title="copiar enlace" data-placement="bottom">
+<a href="#" class="cp-button" aria-label="Icono copiar enlace al portapapeles" data-clipboard-text="https://www.poderjudicial.es/search/AN/openDocument/4702b41596e1462b/20150724"><i class="fa fa-clipboard" aria-hidden="true"></i></a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="row searchresult doc" id="jurisprudenciaresults_content-6861225" data-ref="6861225" data-db="AN" data-fechares="20120208" data-alertdoc="">
+<div class="col-xs-12 col-sm-12 content">
+<div class="title">
+<a href="#" data-link="https://www.poderjudicial.es/search/AN/openDocument/0c0bf0a9f3f1180a/20131018" onclick="markOpenedDoc($(this));openDocumentNewWindow(this);return false;" class="tooltips new-button hidden-xs" title="Abrir el documento en nueva ventana" data-placement="top" aria-label="Icono Abrir el documento en nueva ventana" data-databasematch="AN" data-reference="6861225" data-statsqueryid="240439559" data-links="&amp;quot;prision provisional&amp;quot; Y (&amp;quot;estafa agravada&amp;quot; O &amp;quot;estafa agravado&amp;quot;) Y (criptomoneda O bitcoin O inversion) Y reincidencia Y agravante Y mujer" data-optimize="20131018" data-start="5"><i class="fa fa-external-link" aria-hidden="true"></i></a><span class="separator hidden-xs">&nbsp;</span><a href="https://www.poderjudicial.es/search/AN/openDocument/0c0bf0a9f3f1180a/20131018" id="ref-6861225" onclick="markOpenedDoc($(this));openDocumentFromHref(this);return false;" data-databasematch="AN" data-reference="6861225" data-statsqueryid="240439559" data-links="&amp;quot;prision provisional&amp;quot; Y (&amp;quot;estafa agravada&amp;quot; O &amp;quot;estafa agravado&amp;quot;) Y (criptomoneda O bitcoin O inversion) Y reincidencia Y agravante Y mujer" data-optimize="20131018" data-roj="SAP M 23386/2012" data-fechares="20120208" data-alertdoc="" data-start="5" data-langiso="es">SAP Madrid, a 08 de febrero de 2012 - ROJ: SAP M 23386/2012</a>
+</div>
+<div class="metadatos">
+<ul>
+<li>
+<b>ECLI:ES:APM:2012:23386</b>
+</li>
+<li>N&ordm; de Resoluci&oacute;n: <b>46/2012</b>
+</li>
+<li>Municipio: <b>Madrid</b>
+</li>
+<li>Ponente: <b>MARIA DEL PILAR DE PRADA BENGOA</b>
+</li>
+<li>N&ordm; Recurso: <b>7/2009</b>
+</li>
+</ul>
+</div>
+<div class="summary" id="jur-summary-5">
+                                   Resumen Autom&aacute;tico: <b>COMUNIDAD DE PROPIETARIOS . Elevó a definitiva su calificación provisional, en la que calificó los hechos como constitutivos de un delito continuado de apropiación indebida y de un delito continuado de <font color=red>estafa agravada</font> por el importe de la defraudación y por recaer sobre la vivienda habitual-domicilio familiar de 78 famílias- de la CP ", previstos en los artículos 252 , 248 , 249 y 250.1 , 1°-3°-6°-7 º y 2 , y 74 del Código Penal . Son responsables en concepto de autores, , , , , y , conforme a lo dispuesto en el artículo 28 del Código Penal . Son responsables civiles las Sociedades "CÍJARA 2000, SL", LAGAMA, SL , "NUESTRA CASA, SA (NUCASA), SUPRACOMUNIDADES, SL , FEDITER <font color=red>INVERSIONES</font>, SL", FEDISAN,SL , "ANEINSA 2O00</b>
+</div>
+</div>
+<div class="">
+<div class="info pull-right">
+<ul></ul>
+</div>
+</div>
+<div class="col-xs-12 actions">
+<div class="pull-left docactions">
+<ul>
+<li id="jur-leglink-5" class="hidden-xs hidden legislacion" data-toggle="popover" data-a="jur-legdiv-5" data-placement="bottom" data-pos="5">
+<a href="#" onclick="return false;" class="tooltips" title="Legislaci&oacute;n relacionada" data-placement="top">
+                                                                Legislaci&oacute;n <i class="fa fa-angle-down" aria-hidden="true"></i></a>
+</li>
+</ul>
+<div id="jur-legdiv-5" class="showLegRel hidden popover-content"></div>
+</div>
+<div class="pull-right docactions">
+<ul>
+<li class="social tooltips" title="compartir en Facebook" data-placement="bottom">
+<a href="#" class="fb-button" aria-label="Icono compartir en Facebook" data-href="https://www.poderjudicial.es/search/AN/openDocument/0c0bf0a9f3f1180a/20131018" data-title="ROJ: SAP M 23386/2012"><i class="fa fa-facebook-square" aria-hidden="true"></i></a>
+</li>
+<li class="social tooltips twitter" title="compartir en Twitter" data-placement="bottom">
+<a href="#" class="twtr-button" aria-label="Icono compartir en Twitter. Pulse para compartir en Twitter" data-href="https://www.poderjudicial.es/search/AN/openDocument/0c0bf0a9f3f1180a/20131018" data-title="ROJ: SAP M 23386/2012">
+<svg class="social_twitter" viewBox="0 0 26 26" aria-hidden="true">
+<g>
+<path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path>
+</g>
+</svg>
+</a>
+</li>
+<li class="social tooltips" title="copiar enlace" data-placement="bottom">
+<a href="#" class="cp-button" aria-label="Icono copiar enlace al portapapeles" data-clipboard-text="https://www.poderjudicial.es/search/AN/openDocument/0c0bf0a9f3f1180a/20131018"><i class="fa fa-clipboard" aria-hidden="true"></i></a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="bottompagination row">
+<form id="bottomfrmFilterjurisprudencia" name="frmFilterjurisprudencia" action="#" class="searchform" onsubmit="goToPage('jurisprudencia',$(this).find('.slectnavgoto input').val());">
+<div id="jurisprudenciaresults_bottompagination" class="pull-right searchpagination searchform bottom"></div>
+</form>
+</div>
+</div>
+
